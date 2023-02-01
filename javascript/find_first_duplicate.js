@@ -1,17 +1,26 @@
 function findFirstDuplicate(arr) {
-  // type your code here
+  for (let i =0;i<arr.length;i++){
+    for (let j=0;j<arr.length;j++){
+      if (i!=j){
+        if (arr[j]===arr[i]){
+            return arr[j];
+        }
+      }
+    }
+  }
+  return -1;
 }
+findFirstDuplicate([2, 3, 1, 3, 2])
+// if (require.main === module) {
+//   // add your own tests in here
+//   console.log("Expecting: 3");
+//   console.log("=>", findFirstDuplicate([2, 1, 3, 3, 2]));
 
-if (require.main === module) {
-  // add your own tests in here
-  console.log("Expecting: 3");
-  console.log("=>", findFirstDuplicate([2, 1, 3, 3, 2]));
+//   console.log("");
 
-  console.log("");
-
-  console.log("Expecting: -1");
-  console.log("=>", findFirstDuplicate([1, 2, 3, 4]));
-}
+//   console.log("Expecting: -1");
+//   console.log("=>", findFirstDuplicate([1, 2, 3, 4]));
+// }
 
 module.exports = findFirstDuplicate;
 
